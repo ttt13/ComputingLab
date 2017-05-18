@@ -25,7 +25,7 @@ int main( void )
 		for ( i = 0; i < (y-2); i++ ){ // Width -2 because top and bottom contained in length.
 			printf("%c", hashtag);
 
-			for ( k = 0; k < (y-2); k++ ){ // periods in the width
+			for ( k = 0; k < (x-2); k++ ){ // periods in the width
 				printf("%c", period);
 			}
 			printf("%c", hashtag);
