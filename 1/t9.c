@@ -10,6 +10,7 @@ int main( void )
 	float b = 0; // Counter to print hashtags
 	char hashtag = '#';
 	char dot = '.';
+	char nothing = ' ';
 	float left = 0; // For left '#' placement location
 	float right = 0; // For right '#' placement location
 
@@ -22,7 +23,7 @@ int main( void )
 		for ( b = (x - 1); b >= 0; b-- ){
 			if( a == (y-1) || a == 0 ){
 				if ( b < left || b > right ){
-					printf(" ");
+					printf("%c", nothing);
 				}
 				else{
 				printf("%c", hashtag);
@@ -30,7 +31,7 @@ int main( void )
 			}
 			else if( a < y || a > 0 ){
 				if( b < left || b > right ){
-					printf(" ");
+					printf("%c", nothing);
 				}
 				else if( b == left || b == right){
 					printf("%c", hashtag);
