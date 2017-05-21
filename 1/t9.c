@@ -11,6 +11,7 @@ int main( void )
 	char hashtag = '#';
 	char dot = '.';
 	char nothing = ' ';
+	char something = '/';
 	float left = 0; // For left '#' placement location
 	float right = 0; // For right '#' placement location
 
@@ -20,7 +21,7 @@ int main( void )
 		left = floor( a * ( x / (2 * y) ) );
 		right = ceil( (x-1) + (-a) * ( x/(2 * y) ) );
 
-		for ( b = (x - 1); b >= 0; b-- ){
+		for ( b = 0; b <= right; b++ ){ // b=(x-1);b>=0;b--)
 			if( a == (y-1) || a == 0 ){
 				if ( b < left || b > right ){
 					printf("%c", nothing);
@@ -29,7 +30,7 @@ int main( void )
 				printf("%c", hashtag);
 				}
 			}
-			else if( a < y || a > 0 ){
+			else if( a < (y-1) || a > 0 ){
 				if( b < left || b > right ){
 					printf("%c", nothing);
 				}
