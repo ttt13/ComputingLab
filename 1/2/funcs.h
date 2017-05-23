@@ -1,0 +1,10 @@
+#ifndef FUNCS_H_
+#define FUNCS_H_
+
+// returns the larger of the two arguments
+int max( int x, int y);
+
+// returns the smaller of the two arguments
+int min( int x, int y);
+
+#endif // funcs.h
