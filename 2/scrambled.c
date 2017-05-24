@@ -23,17 +23,4 @@ int scrambled( unsigned int a[], unsigned int b[], unsigned int len )
 	}
 }
 
-int main( void )
-{
-	unsigned int a[] = {};
-	unsigned int b[] = {};
-
-	if( scrambled(a,b,8) == 1 ){
-		printf("b same as a");
-	}else{
-		printf("b different");
-	}
-
-	return 0;
-}
 
