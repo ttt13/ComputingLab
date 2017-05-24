@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int scrambled( unsigned int a[], unsigned int b[], unsigned int len )
+{
+	unsigned int temp = 0;
+	if (len == 0){
+		return 1;
+	}else{
+		for (int i = 0; i < len; i++){
+			temp = a[i];
+			for (int n = 0; n < len; n++){
+				if (b[n] == temp){
+					return 1;
+				}
+			}
+		}
+	}
+	return 0;
+}
