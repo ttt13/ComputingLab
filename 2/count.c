@@ -14,11 +14,12 @@ int main(void)
 
 		if (c != ' ' && c != '\n' && c != '\''){
 			charcount ++;
+// c!= 37 || 61<c<91 || 96<c<123
 		}
-		if (c == ' ' || c == '\n'){
+		if (c != '\'' && (c == ' ' || c == '\n' || c == '-')){
 			wordcount++;
 		}
-		if (c  == '\n'){
+		if (c != '\'' && c  == '\n'){
 			linecount++;
 		}
 
