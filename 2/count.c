@@ -10,10 +10,10 @@ int main(void)
 	char last;
 
 	last = c = getchar();
-	if (c!= 32 && c!= 10 && c!= '\''){
+	if (c!= 32 && c!= 10){ //&& c!= '\''){
 		charcount++;
 	}
-	if ( c != '\'' && c == '\n'){
+	if ( c == '\n'){ // c != '\''
 		linecount++;
 	}
 
@@ -21,7 +21,7 @@ int main(void)
 	{
 		c = getchar();
 
-		if (c != EOF && c != '\''){
+		if (c != EOF){ // c != '\''){
 			charcount ++;
 		}
 		if  ( (c != 39) && ( (c < 65 || c > 90 ) && (c < 97 || c > 122)) )
@@ -31,7 +31,7 @@ int main(void)
 				wordcount++;
 			}
 		}
-		if (c != '\'' && c  == '\n'){
+		if (c  == '\n'){ // c!= '\''
 			linecount++;
 		}
 		last = c;
