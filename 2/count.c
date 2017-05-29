@@ -21,7 +21,7 @@ int main(void)
 	{
 		c = getchar();
 
-		if (c != EOF || c != '\''){
+		if (c != EOF && c != '\''){
 			charcount ++;
 		}
 		if  ( (c != 39) && ( (c < 65 || c > 90 ) && (c < 97 || c > 122)) )
