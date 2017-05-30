@@ -77,7 +77,17 @@ uint8_t min( const uint8_t array[],
 	     unsigned int rows )
 {
   // your code here
-  return 0;
+  uint8_t minimum = array[0];
+  //minimum = array[0];
+  for (int x = 0; x < rows; x++){
+    for (int y = 0; y < cols; y++){
+      if(array[y + (x*cols)] < minimum){
+        minimum = ( array[y + (x*cols)] );
+      }
+
+    }
+  }
+  return minimum;
 }
 
 // Return the lightest color that appears in the array; i.e. the
@@ -87,7 +97,16 @@ uint8_t max( const uint8_t array[],
 		 unsigned int rows )
 {
   // your code here
-  return 0;
+  uint8_t maximum = array[0];
+  maximum = array[0];
+  for (int x = 0; x < rows; x++){
+    for (int y = 0; y < cols; y++){
+      if(array[y + (x*cols)] > maximum){
+        maximum = ( array[y + (x*cols)] );
+      }
+    }
+  }
+  return maximum;
 }
 
 // TASK 2
