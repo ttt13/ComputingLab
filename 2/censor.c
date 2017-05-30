@@ -12,7 +12,7 @@ int main( int argc, char* argv[] )
 	/*for (int i = 1; i < argc; i++){
 		printf("%s\n", argv[i]); */ // for arguments.
 
-	while (c != EOF){
+	while (c!= EOF){
 		c = getchar();
 
 		if( (c == 39) || ( (c >= 'a' && c <= 'z' ) || (c >= 'A' && c <= 'Z')) ){
@@ -51,14 +51,10 @@ int main( int argc, char* argv[] )
 			i = 0;
 			printf("%c", c);
 		}
-
-
-		//if ( (c != 39) && ( (c < 65 || c > 90 ) && (c < 97 || c > 122)) ){
-			
-		
+	if (c == EOF){
+		return 0;
 	}
-		
-
+	}
 return 0;
 }
 
