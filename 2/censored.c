@@ -3,17 +3,13 @@
 
 int main( int argc, char* argv[] )
 {
-	char c;
+	char c; // for getchar()
 	char temp[128];
-	int i = 0;
-	int x = 1;
-	int result = 1;
+	int i = 0; // index counter for temp string
+	int x = 1; // counter for arguments
+	int result = 1; // used for strcmp() != 0 to access the while loop below
 
-	/*for (int i = 1; i < argc; i++){
-		printf("%s\n", argv[i]); */ // for arguments.
-
-	while (c!= EOF){
-		c = getchar();
+	while ( (c = getchar()) != EOF){
 
 		if( (c == 39) || ( (c >= 'a' && c <= 'z' ) || (c >= 'A' && c <= 'Z')) ){
 			temp[i] = c;
@@ -21,19 +17,12 @@ int main( int argc, char* argv[] )
 		}
 		temp[i]='\0';
 
-		/* while(x < argc){
-			result = strcmp(temp, argv[x]);// strlen(argv[x]));
-			if (result != 0){
-				x++;
-			}
-			if(result == 0){
-				printf("CENSORED");
-			}
-		} */
-
 		if ( (c != 39) && ( (c < 'a' || c > 'z' ) && (c < 'A' || c > 'Z')) ){
+			
 			while(x < argc && result != 0){
+				
 				result = strcmp(temp, argv[x]);// strlen(argv[x]));
+				
 				if (result != 0){
 					x++;
 				}
@@ -51,9 +40,6 @@ int main( int argc, char* argv[] )
 			i = 0;
 			printf("%c", c);
 		}
-	if (c == EOF){
-		return 0;
-	}
 	}
 return 0;
 }
