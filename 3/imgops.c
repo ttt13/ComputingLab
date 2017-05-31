@@ -137,15 +137,16 @@ void flip_horizontal( uint8_t array[],
               unsigned int rows )
 {
   // your code here
-	uint8_t temp[cols*rows];
+	unsigned int total = (cols * rows);
+	uint8_t temp[total];
 	int counter = 0;
 	for (int x = 0; x < rows; x++){
-		for (int y = (cols -1); y >= 0; y++){
+		for (int y = (cols -1); y >= 0; y--){
 			temp[counter] = array[y + (x*cols)];
 			counter++;
 		}
 	}
-	for (int z = 0; z < (rows*cols); z++){
+	for (int z = 0; z < (total); z++){
 		array[z] = temp[z];
 	}
 }
@@ -156,7 +157,8 @@ void flip_vertical( uint8_t array[],
             unsigned int rows )
 {
     // your code here
-	uint8_t temp2[cols*rows];
+	unsigned int total2 = (cols*rows);
+	uint8_t temp2[total2];
 	int count = 0;
 	for (int a = (rows-1); a >= 0; a--){
 		for (int b = 0; b < cols; b++){
@@ -164,7 +166,7 @@ void flip_vertical( uint8_t array[],
 			count++;
 		}
 	}
-	for (int c = 0; c < (rows*cols); c++){
+	for (int c = 0; c < (total2); c++){
 		array[c] = temp2[c];
 	}
 }
