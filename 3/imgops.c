@@ -122,7 +122,7 @@ void replace_color(  uint8_t array[],
 	for (int x = 0; x < rows; x++){
 		for (int y = 0; y < cols; y++){
 			if(array[y + (x*cols)] == pre_color){
-				array[y + (x*cols)] == post_color;
+				array[y + (x*cols)] = post_color;
 			}
 		}
 	}
