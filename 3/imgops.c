@@ -221,6 +221,16 @@ void scale_brightness( uint8_t array[],
             double scale_factor )
 {
   // your code here
+	uint8_t result = 0;
+	for (int x = 0; x < rows; x++){
+		for (int y = 0; y < cols; y++){
+			result = ( scale_factor * array[y + (x*cols)] );
+			if (result > 255){
+				result = 255;
+			}
+			array[y + (x*cols)] = result;
+		}
+	}
 }
 
 
