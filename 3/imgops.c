@@ -208,6 +208,12 @@ void invert( uint8_t array[],
          unsigned int rows )
 {
     // your code here
+	uint8_t maximum = 255;
+	for (int i = 0; i < rows; i++){
+		for (int n = 0; n < cols; n++){
+			array[n + (i * cols)] = ( maximum - array[n + (i * cols)] );
+		}
+	}
 }
 
 /* TASK 6 */
