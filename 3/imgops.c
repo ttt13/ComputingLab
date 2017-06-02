@@ -264,7 +264,7 @@ void normalize( uint8_t array[],
 	for (int x = 0; x < rows; x++){
 		for (int y = 0; y < cols; y++){
 			double findScale = (array[y + (x*cols)] - minimum) / oldRange;
-			array[y + (x*cols)] = (findScale * range);
+			array[y + (x*cols)] = round((findScale * range));
 		}
 	}
 }
