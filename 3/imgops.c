@@ -255,6 +255,18 @@ void normalize( uint8_t array[],
         unsigned int rows )
 {
     // your code here
+
+	uint8_t minimum = min(array, cols, rows);
+	uint8_t maximum = max(array, cols, rows);
+	uint8_t range = 255;
+	double oldRange = (maximum - minimum);
+
+	for (int x = 0; x < rows; x++){
+		for (int y = 0; y < cols; y++){
+			double findScale = (array[y + (x*cols)] - minimum) / oldRange;
+			array[y + (x*cols)] = (findScale * range);
+		}
+	}
 }
 
 /* TASK 8 */
