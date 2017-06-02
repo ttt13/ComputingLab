@@ -188,9 +188,9 @@ int locate_color(  const uint8_t array[],
 
 	for (unsigned int a = 0; a < rows; a++){
 		for (unsigned int b = 0; b < cols; b++){
-			if ( array[b + (a*cols)] == color ){
-				x = &b;
-				y = &a;
+			if ( get_pixel(array, cols, rows, b, a) == (color) ){
+				*x = b;
+				*y = a;
 				return 1;
 			}
 		}
