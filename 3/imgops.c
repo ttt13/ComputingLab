@@ -282,8 +282,37 @@ uint8_t* half( const uint8_t array[],
 	       unsigned int rows )
 {
   // your code here
-  return NULL;
+    uint8_t a;
+    uint8_t b;
+    uint8_t c;
+    uint8_t d;
+    double average1 = 0;
+    uint8_t average2 = 0;
+
+    uint8_t* newImage = malloc(sizeof(uint8_t) * ((rows)/2) * ((cols)/2));
+    if (newImage == NULL){
+        return NULL;
+      }
+
+      else{
+
+        for (uint8_t y = 0; y < rows/2; y++){ // Y axis -- rows
+            for (uint8_t x = 0; x < cols/2; x++){ // X axis -- columns 
+
+              a = get_pixel(array, cols, rows, 2 * x, 2 * y);
+              b = get_pixel(array, cols, rows, 2 * x+1, 2 * y);
+              c = get_pixel(array, cols, rows, 2 * x, 2 * y+1);
+              d = get_pixel(array, cols, rows, 2 * x+1, 2 * y+1);
+              average1 = ((a + b + c + d)/4.0);
+              average2 = round(average1);
+              set_pixel(newImage, cols/2, rows/2, x, y, average2);
+          
+            }
+        }
+      }
+  return newImage;
 }
+
 
 
 
