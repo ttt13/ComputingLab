@@ -353,6 +353,17 @@ void region_set( uint8_t array[],
          uint8_t color )
 {
     // your code here
+  assert( left <= right);
+  assert (top <= bottom);
+  
+  if (left < right || top < bottom){
+    for ( int y = top; y < bottom; y++){
+      for ( int x = left; x < right; x++){
+        set_pixel( array, cols, rows, x, y, color );
+      }
+    }
+  }
+
 }
 
 /* TASK 10 */
