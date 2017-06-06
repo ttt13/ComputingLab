@@ -416,7 +416,9 @@ uint8_t* region_copy( const uint8_t array[],
   int topBot = (bottom - top);
   int leftRight = (right - left);
   uint8_t * newImage = malloc( leftRight * topBot  * sizeof(uint8_t));
-
+  assert (top <= bottom);
+  assert (left <= right);
+  
   if (top == bottom || left == right){
     return NULL;
   }
