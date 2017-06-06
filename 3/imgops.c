@@ -355,7 +355,7 @@ void region_set( uint8_t array[],
     // your code here
   assert( left <= right);
   assert (top <= bottom);
-  
+
   if (left < right || top < bottom){
     for ( int y = top; y < bottom; y++){
       for ( int x = left; x < right; x++){
@@ -380,7 +380,21 @@ unsigned long int region_integrate( const uint8_t array[],
                     unsigned int bottom )
 {
     // your code here
-    return 0;
+  unsigned long int sum = 0;
+  assert( left <= right);
+  assert( top <= bottom);
+  if (top == bottom || left == right){
+    sum = 0;
+    return sum; 
+  }
+  if (top < bottom || left < right){
+    for ( int y = top; y < bottom; y++){
+      for ( int x = left; x < right; x++){
+        sum += array[y + x*cols];
+      }
+    }
+  }
+  return sum;
 }
 
 /* TASK 11 */
