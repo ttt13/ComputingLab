@@ -412,7 +412,25 @@ uint8_t* region_copy( const uint8_t array[],
               unsigned int bottom )
 {
     // your code here
+  int color;
+  int topBot = (bottom - top);
+  int leftRight = (right - left);
+  uint8_t * newImage = malloc( leftRight * topBot  * sizeof(uint8_t));
+
+  if (top == bottom || left == right){
     return NULL;
+  }
+
+  if (top < bottom && left < right){
+    for (int y = top; y < bottom; y++){
+      for (int x = left; x < right; x++){
+        color = get_pixel( array, cols, rows, x, y);
+
+        set_pixel( newImage, leftRight, topBot, x - left, y - top, color);
+      }
+    }
+    return newImage;
+  }
 }
 
 
