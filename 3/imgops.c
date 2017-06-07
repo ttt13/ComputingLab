@@ -384,13 +384,12 @@ unsigned long int region_integrate( const uint8_t array[],
   assert( left <= right);
   assert( top <= bottom);
   if (top == bottom || left == right){
-    sum = 0;
-    return sum; 
+    return 0; 
   }
-  if (top < bottom || left < right){
+  if (top < bottom && left < right){
     for ( int y = top; y < bottom; y++){
       for ( int x = left; x < right; x++){
-        sum += array[y + x*cols];
+        sum = sum + get_pixel( array, cols, rows, x, y);
       }
     }
   }
